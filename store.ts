@@ -31,7 +31,7 @@ const seedUsers: User[] = [
     email: 'user@engine.com',
     passwordHash: '123456',
     role: 'user',
-    credits: 2,
+    credits: 20,
     language: 'pt-br',
     cards: [],
     subscriptionType: 'none',
