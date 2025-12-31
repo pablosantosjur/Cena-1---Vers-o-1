@@ -275,10 +275,10 @@ export enum CopyTone {
   CONFIDENT = 'Confiante',
   ACADEMIC = 'Acadêmico',
   CHILDREN = 'Infantil',
-  INSPIRATIONAL = 'Inspirador',
+  // Fix: Removed duplicate INSPIRATIONAL identifier.
   MOTIVATIONAL = 'Motivacional',
   EMOTIONAL = 'Emocional',
-  EMPATHETIC = 'Empático',
+  // Fix: Removed duplicate EMPATHETIC identifier.
   SERIOUS = 'Sério',
   CONTROVERSIAL = 'Provocativo',
   PERSUASIVE = 'Persuasivo',

@@ -2,7 +2,7 @@
 import React from 'react';
 import { InputForm } from './components/InputForm';
 import { ResultDisplay } from './components/ResultDisplay';
-import { GeneratorParams, AIResponse, User, ScriptHistoryItem, CopyResponse } from './types';
+import { GeneratorParams, AIResponse, User, ScriptHistoryItem, CopyResponse, CopyHistoryItem } from './types';
 import { generateContent } from './services/geminiService';
 import { authStore } from './store';
 import { Login } from './components/Auth/Login';
@@ -28,6 +28,10 @@ const App: React.FC = () => {
   const [draftTopic, setDraftTopic] = React.useState<string | null>(null);
   const [showScriptHistory, setShowScriptHistory] = React.useState(false);
   const [userScripts, setUserScripts] = React.useState<ScriptHistoryItem[]>([]);
+
+  // Estado para histórico de Copywriter
+  const [showCopyHistory, setShowCopyHistory] = React.useState(false);
+  const [userCopies, setUserCopies] = React.useState<CopyHistoryItem[]>([]);
 
   React.useEffect(() => {
     const handleToast = (e: any) => {
@@ -97,12 +101,28 @@ const App: React.FC = () => {
     setShowScriptHistory(!showScriptHistory);
   };
 
+  const loadCopyHistory = () => {
+    if (!currentUser) return;
+    const copies = authStore.getAllUserCopies(currentUser.id);
+    setUserCopies(copies);
+    setShowCopyHistory(!showCopyHistory);
+  };
+
   const selectFromHistory = (item: ScriptHistoryItem) => {
     setResult(item.content);
     setShowScriptHistory(false);
     notify("Roteiro recuperado do histórico.");
     setTimeout(() => {
       document.getElementById('results-view')?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
+
+  const selectCopyFromHistory = (item: CopyHistoryItem) => {
+    setCopyResult(item.content);
+    setShowCopyHistory(false);
+    notify("Copy recuperado do histórico.");
+    setTimeout(() => {
+      document.getElementById('copy-results')?.scrollIntoView({ behavior: 'smooth' });
     }, 100);
   };
 
@@ -168,6 +188,40 @@ const App: React.FC = () => {
           <KeywordResearch onPAAPlay={handlePAAShortcut} />
         ) : view === 'copywriter' ? (
           <div className="space-y-12">
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+               <div>
+                  <h1 className="text-3xl md:text-4xl font-black text-[#F1F1F1] tracking-tighter">Laboratório de Copy</h1>
+                  <p className="text-[#AAAAAA] text-sm font-medium">Textos otimizados para blogs e redes sociais.</p>
+               </div>
+               <button 
+                  onClick={loadCopyHistory}
+                  className="bg-[#272727] border border-[#3F3F3F] text-[#F1F1F1] px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest hover:border-[#FF0000] transition-all flex items-center gap-2"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  Histórico (Últimos 10)
+                </button>
+            </div>
+
+            {showCopyHistory && (
+              <div className="bg-[#272727] border border-[#FF0000]/30 rounded-2xl p-6 mb-8 animate-in slide-in-from-top-2 duration-300">
+                <h3 className="text-[10px] font-black text-[#FF0000] uppercase tracking-widest border-b border-[#3F3F3F] pb-3 mb-4">Suas Últimas Cópias</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                  {userCopies.length > 0 ? userCopies.map((c, idx) => (
+                    <button 
+                      key={idx}
+                      onClick={() => selectCopyFromHistory(c)}
+                      className="text-left bg-[#0F0F0F] border border-[#3F3F3F] hover:border-[#FF0000] p-4 rounded-xl transition-all group"
+                    >
+                       <p className="text-[#F1F1F1] font-bold text-sm truncate uppercase tracking-tight">{c.params.subject}</p>
+                       <p className="text-[8px] font-black text-[#AAAAAA] mt-2 uppercase tracking-widest">{new Date(c.timestamp).toLocaleDateString()} • {c.params.platformFormat}</p>
+                    </button>
+                  )) : (
+                    <p className="text-[#AAAAAA] text-xs font-bold col-span-full py-8 text-center uppercase tracking-widest">Nenhuma copy encontrada no histórico.</p>
+                  )}
+                </div>
+              </div>
+            )}
+
             <CopyForm onGenerated={handleCopySuccess} />
             <div id="copy-results">
               {copyResult && <CopyResult data={copyResult} />}

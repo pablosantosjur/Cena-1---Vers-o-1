@@ -1,9 +1,10 @@
 
-import { User, AppState, PlatformLanguage, UserRole, CreditCard, BillingEntry, PaymentType, ScriptHistoryItem, KeywordHistoryItem, AIResponse, GeneratorParams, KeywordAnalysisResponse, KeywordSearchParams } from './types';
+import { User, AppState, PlatformLanguage, UserRole, CreditCard, BillingEntry, PaymentType, ScriptHistoryItem, KeywordHistoryItem, CopyHistoryItem, AIResponse, GeneratorParams, KeywordAnalysisResponse, KeywordSearchParams, CopyResponse, CopywriterParams } from './types';
 
 const DB_STORAGE_KEY = 'yt_engine_db';
 const SCRIPTS_HISTORY_KEY = 'cena1_scripts_history';
 const KEYWORDS_HISTORY_KEY = 'cena1_keywords_history';
+const COPY_HISTORY_KEY = 'cena1_copy_history';
 const SESSION_PERSISTENT_KEY = 'yt_engine_session_p';
 const SESSION_VOLATILE_KEY = 'yt_engine_session_v';
 
@@ -140,6 +141,50 @@ export const authStore = {
     };
     history[createHistoryKey(userId, params.seed)] = item;
     saveHistory(KEYWORDS_HISTORY_KEY, history);
+  },
+
+  // Cache de Copywriter (Limitado aos 10 últimos)
+  getCachedCopy: (userId: string, subject: string): CopyHistoryItem | null => {
+    const history = getHistory<CopyHistoryItem>(COPY_HISTORY_KEY);
+    return history[createHistoryKey(userId, subject)] || null;
+  },
+
+  getAllUserCopies: (userId: string): CopyHistoryItem[] => {
+    const history = getHistory<CopyHistoryItem>(COPY_HISTORY_KEY);
+    return Object.values(history)
+      .filter(item => item.userId === userId)
+      .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+  },
+
+  saveCopyToCache: (userId: string, params: CopywriterParams, content: CopyResponse) => {
+    const history = getHistory<CopyHistoryItem>(COPY_HISTORY_KEY);
+    
+    // Criar o novo item
+    const item: CopyHistoryItem = {
+      userId,
+      timestamp: new Date().toISOString(),
+      params,
+      content,
+      origin: 'COPYWRITER'
+    };
+    
+    // Adicionar ao histórico
+    const key = createHistoryKey(userId, params.subject);
+    history[key] = item;
+
+    // Lógica para manter apenas os 10 últimos deste usuário específico
+    const userItems = Object.entries(history)
+      .filter(([_, val]) => val.userId === userId)
+      .sort(([_, a], [__, b]) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+
+    if (userItems.length > 10) {
+      const itemsToRemove = userItems.slice(10);
+      itemsToRemove.forEach(([k, _]) => {
+        delete history[k];
+      });
+    }
+
+    saveHistory(COPY_HISTORY_KEY, history);
   },
 
   register: (username: string, fullName: string, email: string, pass: string): { success: boolean, message?: string } => {

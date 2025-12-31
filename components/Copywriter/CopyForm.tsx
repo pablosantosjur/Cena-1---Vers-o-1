@@ -67,9 +67,9 @@ export const CopyForm: React.FC<CopyFormProps> = ({ onGenerated }) => {
   const [formData, setFormData] = React.useState<CopywriterParams>({
     subject: '',
     targetAudience: '',
-    niche: CopyNiche.TECH,
+    niche: CopyNiche.EDUCATION_DIDACTIC,
     awareness: AwarenessLevel.PROBLEM_AWARE,
-    objective: CopyObjective.EDUCATE,
+    objective: CopyObjective.EDUCATE_CONCEPT,
     platformFormat: PLATFORM_FORMATS.LINKEDIN[0],
     humanization: HumanizationLevel.BALANCED,
     tone: CopyTone.EDUCATIVE,
@@ -96,6 +96,10 @@ export const CopyForm: React.FC<CopyFormProps> = ({ onGenerated }) => {
     try {
       const data = await generateCopy(formData);
       authStore.consumeCredit(`Copy: ${formData.subject.substring(0, 20)}`);
+      
+      // Salvar no histórico limitado a 10
+      authStore.saveCopyToCache(user.id, formData, data);
+      
       onGenerated(data);
       notify('Conteúdo estratégico gerado com sucesso!');
     } catch (err: any) {
@@ -112,7 +116,7 @@ export const CopyForm: React.FC<CopyFormProps> = ({ onGenerated }) => {
   return (
     <div className="bg-[#272727] p-6 md:p-12 rounded-[2.5rem] border border-[#3F3F3F] shadow-2xl animate-in fade-in duration-700">
       <div className="mb-10 text-center md:text-left">
-        <h2 className="text-3xl md:text-5xl font-black text-[#F1F1F1] tracking-tighter mb-4">Laboratório de <span className="text-[#FF0000]">COPYWRITING</span></h2>
+        <h2 className="text-3xl md:text-5xl font-black text-[#F1F1F1] tracking-tighter mb-4">Novo Conteúdo</h2>
         <p className="text-[#AAAAAA] text-sm md:text-base font-medium max-w-3xl">Gere textos humanizados, persuasivos e 100% otimizados para SEO em segundos.</p>
       </div>
 
