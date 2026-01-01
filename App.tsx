@@ -204,7 +204,7 @@ const App: React.FC = () => {
 
             {showCopyHistory && (
               <div className="bg-[#272727] border border-[#FF0000]/30 rounded-2xl p-6 mb-8 animate-in slide-in-from-top-2 duration-300">
-                <h3 className="text-[10px] font-black text-[#FF0000] uppercase tracking-widest border-b border-[#3F3F3F] pb-3 mb-4">Suas Últimas Cópias</h3>
+                <h3 className="text-[10px] font-black text-[#F1F1F1] uppercase tracking-widest border-b border-[#3F3F3F] pb-3 mb-4">Suas Últimas Cópias</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                   {userCopies.length > 0 ? userCopies.map((c, idx) => (
                     <button 

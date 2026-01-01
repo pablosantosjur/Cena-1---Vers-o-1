@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { authStore } from '../../store';
 import { User, UserRole, UserStatus, BillingEntry } from '../../types';
@@ -134,18 +133,19 @@ export const AdminDashboard: React.FC = () => {
   const extraCreditsTotal = recentExtraCredits.reduce((acc, curr) => acc + curr.credits, 0);
   const extraRevenueTotal = recentExtraCredits.reduce((acc, curr) => acc + curr.amount, 0);
 
-  const userRevenueMap = billingHistory.reduce((acc, b) => {
+  // Fix: Explicitly type the accumulator and add missing 'yearly' property to handle all PaymentType values.
+  const userRevenueMap = billingHistory.reduce((acc: Record<string, any>, b) => {
     if (!acc[b.userId]) {
-      acc[b.userId] = { total: 0, count: 0, types: { monthly: 0, extra: 0 } };
+      acc[b.userId] = { total: 0, count: 0, types: { monthly: 0, extra: 0, yearly: 0 } };
     }
     acc[b.userId].total += b.amount;
     acc[b.userId].count += 1;
     acc[b.userId].types[b.type] += 1;
     return acc;
-  }, {} as Record<string, { total: number, count: number, types: { monthly: number, extra: number } }>);
+  }, {} as Record<string, any>);
 
   const topUsers = Object.entries(userRevenueMap)
-    .map(([userId, stats]) => {
+    .map(([userId, stats]: [string, any]) => {
       const user = state.users.find(u => u.id === userId);
       return {
         id: userId,
@@ -153,7 +153,7 @@ export const AdminDashboard: React.FC = () => {
         email: user?.email || 'N/A',
         totalSpent: stats.total,
         purchaseCount: stats.count,
-        predominant: stats.types.monthly >= stats.types.extra ? 'Plano' : 'Avulso'
+        predominant: stats.types.monthly + (stats.types.yearly || 0) >= stats.types.extra ? 'Plano' : 'Avulso'
       };
     })
     .sort((a, b) => b.totalSpent - a.totalSpent)

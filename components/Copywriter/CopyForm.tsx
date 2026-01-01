@@ -109,7 +109,7 @@ export const CopyForm: React.FC<CopyFormProps> = ({ onGenerated }) => {
     }
   };
 
-  const sectionLabel = "text-[10px] font-black text-[#FF0000] uppercase tracking-[0.2em] border-l-2 border-[#FF0000] pl-3 mb-6 block";
+  const sectionLabel = "text-[10px] font-black text-[#F1F1F1] uppercase tracking-[0.2em] border-l-2 border-[#FF0000] pl-3 mb-6 block";
   const inputClasses = "w-full bg-[#0F0F0F] border border-[#3F3F3F] rounded-xl p-4 text-sm md:text-base outline-none focus:ring-2 focus:ring-[#FF0000]/30 focus:border-[#FF0000] text-[#F1F1F1] transition-all placeholder:text-[#333]";
   const labelClasses = "block text-[9px] font-black text-[#AAAAAA] uppercase tracking-widest mb-2 ml-1";
 
@@ -184,7 +184,7 @@ export const CopyForm: React.FC<CopyFormProps> = ({ onGenerated }) => {
               className={inputClasses}
             >
               {Object.entries(PLATFORM_FORMATS).map(([platform, formats]) => (
-                <optgroup key={platform} label={platform} className="bg-[#1A1A1A] text-[#FF0000] font-black">
+                <optgroup key={platform} label={platform} className="bg-[#1A1A1A] text-[#F1F1F1] font-black">
                   {formats.map(f => <option key={f} value={f} className="bg-[#0F0F0F] text-[#F1F1F1] font-medium">{f}</option>)}
                 </optgroup>
               ))}

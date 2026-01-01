@@ -59,7 +59,7 @@ ${data.content}`;
       {/* SEO SIDEBAR */}
       <div className="lg:col-span-4 space-y-6">
         <div className="bg-[#0F0F0F] border border-[#3F3F3F] p-8 rounded-[2rem] shadow-xl">
-           <h3 className="text-[10px] font-black text-[#FF0000] uppercase tracking-widest mb-6 flex items-center gap-2">
+           <h3 className="text-[10px] font-black text-[#F1F1F1] uppercase tracking-widest mb-6 flex items-center gap-2">
               <div className="w-1.5 h-1.5 rounded-full bg-[#FF0000]"></div>
               Inteligência SEO
            </h3>
