@@ -22,14 +22,18 @@ interface InputFormProps {
 export const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading, preFilledTopic, onTopicHandled }) => {
   const [formData, setFormData] = React.useState<GeneratorParams>({
     topic: '',
-    niche: VideoNiche.EDUCATION_DIDACTIC,
+    // Fix: Using valid VideoNiche enum member
+    niche: VideoNiche.MARKETING_DIGITAL,
     goal: VideoGoal.EDUCATE_CONCEPT,
-    audienceSegment: AudienceSegment.BEGINNERS,
+    // Fix: Using valid AudienceSegment enum member
+    audienceSegment: AudienceSegment.AUDIENCE_GEN_Z,
     awarenessLevel: AwarenessLevel.PROBLEM_AWARE,
     platform: SocialPlatform.YOUTUBE,
     targetLanguage: TargetLanguage.PT_BR,
-    format: VideoFormat.HORIZONTAL,
-    style: VideoStyle.DYNAMIC,
+    // Fix: Using valid VideoFormat enum member
+    format: VideoFormat.RATIO_16_9,
+    // Fix: Using valid VideoStyle enum member
+    style: VideoStyle.FAST_DYNAMIC,
     targetDurationSeconds: 480,
   });
 

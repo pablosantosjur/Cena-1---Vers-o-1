@@ -41,6 +41,11 @@ export const generateContent = async (params: GeneratorParams): Promise<AIRespon
     4) LOCALIZAÇÃO LINGUÍSTICA: Utilize gírias e expressões naturais da cultura definida por '${params.targetLanguage}'.
     5) ESTRUTURA: Hook Magnético, Intro Contextual, 3 Blocos de Valor Progressivo e CTA Estratégico.
     6) SEO: Gere títulos de alto CTR e descrição otimizada no mesmo idioma do roteiro.
+    7) PAE (Método de viralização de vídeos do Tiago Fonseca): No campo JSON 'description', inclua duas quebras de linha e adicione o resumo da estratégia:
+       "Pontos principais do vídeo:
+        Ponto em comum: ...
+        Algo novo: ...
+        Emoção: ..."
 
     RETORNO: JSON estruturado.
   `;
@@ -128,15 +133,12 @@ export const generateCopy = async (params: CopywriterParams): Promise<CopyRespon
     - Nível de Consciência: ${params.awareness}
     - Objetivo: ${params.objective}
     - Plataforma/Formato: ${params.platformFormat}
-    - Nível de Humanização: ${params.humanization}
     - Tom de Voz: ${params.tone}
     - Grau de Pessoalidade: ${params.personality}
     - Complexidade: ${params.complexity}
     - Estrutura: ${params.structure}
     - Framework de Copy: ${params.framework}
     - Emoção Dominante: ${params.emotion}
-    - Originalidade: ${params.originality}
-    - Persuasão: ${params.persuasion}
     - Idioma: ${params.language}
     - Tamanho Alvo: ${params.length}
 

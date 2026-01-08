@@ -5,15 +5,12 @@ import {
   CopyNiche, 
   AwarenessLevel, 
   CopyObjective,
-  HumanizationLevel,
   CopyTone,
   PersonalityDegree,
   LanguageComplexity,
   CopyStructure,
   CopyFramework,
   DominantEmotion,
-  OriginalityDegree,
-  PersuasionDegree,
   CopyLanguage,
   CopyLength,
   CopyResponse
@@ -67,19 +64,17 @@ export const CopyForm: React.FC<CopyFormProps> = ({ onGenerated }) => {
   const [formData, setFormData] = React.useState<CopywriterParams>({
     subject: '',
     targetAudience: '',
-    niche: CopyNiche.EDUCATION_DIDACTIC,
+    niche: CopyNiche.MARKETING_DIGITAL,
     awareness: AwarenessLevel.PROBLEM_AWARE,
     objective: CopyObjective.EDUCATE_CONCEPT,
     platformFormat: PLATFORM_FORMATS.LINKEDIN[0],
-    humanization: HumanizationLevel.BALANCED,
-    tone: CopyTone.EDUCATIVE,
-    personality: PersonalityDegree.SEMI_PERSONAL,
-    complexity: LanguageComplexity.ACCESSIBLE,
+    tone: CopyTone.PROFESSIONAL_FORMAL,
+    // Fix: Using valid PersonalityDegree enum member
+    personality: PersonalityDegree.SECOND_PERSON,
+    complexity: LanguageComplexity.CONVERSATIONAL,
     structure: CopyStructure.SCANNABLE,
-    framework: CopyFramework.AIDA,
-    emotion: DominantEmotion.TRUST,
-    originality: OriginalityDegree.CREATIVE,
-    persuasion: PersuasionDegree.PERSUASIVE,
+    framework: CopyFramework.AIDA_TEXT,
+    emotion: DominantEmotion.EMPATHY_SUPPORT,
     language: CopyLanguage.PORTUGUESE,
     length: CopyLength.W300
   });
@@ -197,12 +192,6 @@ export const CopyForm: React.FC<CopyFormProps> = ({ onGenerated }) => {
           <span className={sectionLabel}>4. Ajustes de Escrita</span>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="space-y-1">
-              <label className={labelClasses}>Nível de Humanização</label>
-              <select value={formData.humanization} onChange={e => setFormData({...formData, humanization: e.target.value as HumanizationLevel})} className={inputClasses}>
-                {Object.values(HumanizationLevel).map(v => <option key={v} value={v}>{v}</option>)}
-              </select>
-            </div>
-            <div className="space-y-1">
               <label className={labelClasses}>Tom de Voz</label>
               <select value={formData.tone} onChange={e => setFormData({...formData, tone: e.target.value as CopyTone})} className={inputClasses}>
                 {Object.values(CopyTone).map(v => <option key={v} value={v}>{v}</option>)}
@@ -236,18 +225,6 @@ export const CopyForm: React.FC<CopyFormProps> = ({ onGenerated }) => {
               <label className={labelClasses}>Emoção Dominante</label>
               <select value={formData.emotion} onChange={e => setFormData({...formData, emotion: e.target.value as DominantEmotion})} className={inputClasses}>
                 {Object.values(DominantEmotion).map(v => <option key={v} value={v}>{v}</option>)}
-              </select>
-            </div>
-            <div className="space-y-1">
-              <label className={labelClasses}>Grau de Originalidade</label>
-              <select value={formData.originality} onChange={e => setFormData({...formData, originality: e.target.value as OriginalityDegree})} className={inputClasses}>
-                {Object.values(OriginalityDegree).map(v => <option key={v} value={v}>{v}</option>)}
-              </select>
-            </div>
-            <div className="space-y-1">
-              <label className={labelClasses}>Grau de Persuasão</label>
-              <select value={formData.persuasion} onChange={e => setFormData({...formData, persuasion: e.target.value as PersuasionDegree})} className={inputClasses}>
-                {Object.values(PersuasionDegree).map(v => <option key={v} value={v}>{v}</option>)}
               </select>
             </div>
           </div>

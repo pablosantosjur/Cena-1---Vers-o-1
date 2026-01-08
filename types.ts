@@ -1,125 +1,129 @@
 
 export enum VideoGoal {
-  EDUCATE_CONCEPT = 'Educar: explicar conceitos',
-  EDUCATE_STEP_BY_STEP = 'Educar: passo a passo',
-  EDUCATE_TUTORIAL = 'Educar: tutorial prático',
-  EDUCATE_AWARENESS = 'Educar: gerar consciência',
-  EDUCATE_PROBLEM_SOLUTION = 'Educar: resolver problemas',
-  SELL_DIRECT = 'Vender: oferta direta',
-  SELL_INDIRECT = 'Vender: oferta indireta',
-  SELL_PRE_SALE = 'Vender: pré-venda',
-  SELL_UPSELL = 'Vender: upsell / cross-sell',
-  SELL_LEAD_CAPTURE = 'Vender: captura de leads',
-  ENGAGE_INTERACTION = 'Engajar: gerar comentários',
-  ENGAGE_RETENTION = 'Engajar: aumentar retenção',
-  ENGAGE_COMMUNITY = 'Engajar: criar comunidade',
-  ENGAGE_BELONGING = 'Engajar: senso de pertencimento',
-  ENGAGE_VIRAL = 'Engajar: alcance e viralização',
-  AUTHORITY_POSITIONING = 'Autoridade: posicionamento',
-  AUTHORITY_PROOF = 'Autoridade: prova social',
-  AUTHORITY_CASES = 'Autoridade: estudos de caso',
-  AUTHORITY_TRUST = 'Autoridade: gerar confiança',
-  AUTHORITY_BRAND = 'Autoridade: reforço de marca',
-  ACQUISITION_DISCOVERY = 'Aquisição: atrair novos seguidores',
-  ACQUISITION_TRAFFIC = 'Aquisição: gerar tráfego',
-  ACQUISITION_SUBSCRIBE = 'Aquisição: inscrições no canal',
-  RELATIONSHIP_HUMANIZE = 'Relacionamento: humanizar marca',
-  RELATIONSHIP_DIALOGUE = 'Relacionamento: abrir diálogo',
-  RELATIONSHIP_OBJECTION = 'Relacionamento: quebrar objeções',
-  PERFORMANCE_TEST = 'Performance: testar formatos',
-  PERFORMANCE_FEEDBACK = 'Performance: coletar feedback',
-  PERFORMANCE_VALIDATION = 'Performance: validar ideias',
-  STRATEGY_PORTFOLIO = 'Estratégia: construir portfólio',
-  STRATEGY_DOCUMENT = 'Estratégia: documentar jornada',
-  STRATEGY_ASSET = 'Estratégia: criar ativo de longo prazo'
+// EDUCAÇÃO E CONSCIÊNCIA
+EDUCATE_TUTORIAL = 'Educar: Tutorial prático ou Passo a passo',
+EDUCATE_CONCEPT = 'Educar: Explicar conceitos técnicos (O que é?)',
+EDUCATE_PROBLEM_SOLUTION = 'Educar: Consciência de problema e solução',
+NEWS_TRENDS = 'Educar: Análise de Notícia ou Tendência (Newsjacking)',
+
+// VENDA E CONVERSÃO
+SELL_DIRECT = 'Vender: Oferta Direta (Hard Sell)',
+SELL_INDIRECT = 'Vender: Oferta Indireta / Soft Sell',
+SELL_LAUNCH = 'Vender: Aquecimento e Pré-venda (Lançamento)',
+SELL_LEAD_CAPTURE = 'Vender: Captura de Leads (Isca Digital)',
+RELATIONSHIP_OBJECTION = 'Vender: Quebra de Objeções',
+PRODUCT_SHOWCASE = 'Vender: Demonstração de Produto / Unboxing',
+
+// ENGAJAMENTO E EMOÇÃO
+ENGAGE_VIRAL = 'Engajar: Viralização e Topo de Funil',
+ENGAGE_INTERACTION = 'Engajar: Gerar comentários e polêmica',
+ENGAGE_COMMUNITY = 'Engajar: Senso de comunidade e tribo',
+INSPIRE_MOTIVATION = 'Engajar: Inspirar, Motivar e Reflexão',
+
+// EVENTOS E CONVITES
+EVENT_INVITE = 'Convite: Live, Webinar ou Evento',
+
+// AUTORIDADE E BRANDING
+AUTHORITY_STORY = 'Autoridade: História de origem e Jornada',
+AUTHORITY_PROOF = 'Autoridade: Estudos de caso e Prova social',
+BRAND_MANIFESTO = 'Branding: Manifesto da Marca (Nossos Valores)',
+RELATIONSHIP_HUMANIZE = 'Conexão: Humanizar a marca / Bastidores',
+
+// ESTRATÉGIA E LONGO PRAZO
+ACQUISITION_TRAFFIC = 'Tráfego: Levar pessoas para outro canal',
+STRATEGY_DOCUMENT = 'Estratégia: Documentar a jornada (Vlog/Diário)',
+STRATEGY_ASSET = 'Estratégia: Criar ativo de longo prazo (Evergreen/SEO)',
+
 }
 
 export enum VideoNiche {
-  EDUCATION_DIDACTIC = 'Educação e explicações didáticas',
-  CURRENT_AFFAIRS = 'Opinião e comentários sobre atualidades',
-  PODCASTS_DEBATE = 'Podcasts em vídeo / mesas de debate',
-  PERSONAL_DEVELOPMENT = 'Desenvolvimento pessoal',
-  PSYCHOLOGY_BEHAVIOR = 'Psicologia e comportamento humano',
-  PERSONAL_FINANCE = 'Finanças pessoais e investimentos',
-  ENTREPRENEURSHIP = 'Empreendedorismo e negócios digitais',
-  DIGITAL_MARKETING = 'Marketing digital',
-  STORYTELLING = 'Storytelling e narrativas pessoais',
-  LIFESTYLE_VLOGS = 'Vlogs de rotina e lifestyle',
-  PROFESSIONAL_EDUCATION = 'Conteúdo educativo para profissionais',
-  HUMOR_STANDUP = 'Humor autoral e stand-up',
-  ANALYSIS_REVIEWS = 'Análises e críticas aprofundadas',
-  TECHNOLOGY_OPINION = 'Tecnologia com opinião e testes',
-  TEACHERS_CLASSES = 'Aulas autorais e professores',
-  CAREER_MARKET = 'Carreira e mercado de trabalho',
-  RELATIONSHIPS_SOCIAL = 'Relacionamentos e vida social',
-  SPIRITUALITY_PHILOSOPHY = 'Espiritualidade e filosofia de vida',
-  PRODUCTIVITY_TIME = 'Produtividade e gestão do tempo',
-  MENTAL_HEALTH = 'Saúde mental e bem-estar emocional',
-  FINANCIAL_EDUCATION = 'Educação financeira para iniciantes',
-  COMMUNICATION_SPEAKING = 'Comunicação e oratória',
-  PRACTICAL_SKILLS = 'Ensino de habilidades práticas',
-  LEGAL_CONTENT = 'Conteúdo jurídico e análises de casos',
-  MENTORSHIP_COACHING = 'Mentoria e aconselhamento profissional',
-  SALES_NEGOTIATION = 'Vendas e negociação',
-  CREATOR_ECONOMY = 'Economia dos criadores de conteúdo'
+// NEGÓCIOS, CARREIRA E FINANÇAS
+MARKETING_DIGITAL = 'Marketing Digital e Branding',
+ENTREPRENEURSHIP = 'Empreendedorismo e Gestão de Negócios',
+FINANCE_INVESTMENTS = 'Finanças Pessoais e Investimentos',
+CAREER_CORPORATE = 'Carreira, Liderança e Mundo Corporativo',
+SALES_NEGOTIATION = 'Vendas, Persuasão e Negociação',
+LEGAL_LAW = 'Direito, Legislação e Casos Jurídicos',
+REAL_ESTATE = 'Mercado Imobiliário e Corretagem',
+AGRO_BUSINESS = 'Agronegócio, Vida no Campo e Pecuária',
+
+// DESENVOLVIMENTO, MENTE E ESPÍRITO
+PERSONAL_DEVELOPMENT = 'Desenvolvimento Pessoal e Produtividade',
+PSYCHOLOGY_MENTAL_HEALTH = 'Psicologia, Comportamento e Saúde Mental',
+RELATIONSHIPS = 'Relacionamentos, Namoro e Vida Social',
+SPIRITUALITY = 'Espiritualidade, Religião e Filosofia',
+COMMUNICATION = 'Comunicação, Oratória e Carisma',
+
+// SAÚDE, ESTILO DE VIDA E LAZER
+HEALTH_FITNESS = 'Saúde, Nutrição, Treino e Bem-estar',
+LIFESTYLE_TRAVEL = 'Lifestyle, Viagens, Turismo e Rotina',
+BEAUTY_FASHION = 'Beleza, Moda, Estilo e Maquiagem',
+GASTRONOMY = 'Gastronomia, Culinária e Receitas',
+PARENTING_FAMILY = 'Maternidade, Paternidade e Família',
+PETS_ANIMALS = 'Pets, Veterinária e Mundo Animal',
+HOME_DECOR_DIY = 'Casa, Decoração, Reformas e DIY',
+
+// TECNOLOGIA, CIÊNCIAS E MOTORES
+TECHNOLOGY_GAMES = 'Tecnologia, Gadgets, Inovação e Games',
+AUTOMOTIVE = 'Automotivo, Carros e Mecânica',
+SCIENCE_CURIOSITIES = 'Ciência, Curiosidades e Fatos Interessantes',
+PROGRAMMING_DEV = 'Programação, Desenvolvimento e TI',
+
+// EDUCAÇÃO, CULTURA E ENTRETENIMENTO
+KIDS_CONTENT = 'Conteúdo Infantil, Lúdico e Educativo',
+EDUCATION_LANGUAGES = 'Educação Acadêmica, Escolar e Idiomas',
+NEWS_POLITICS = 'Notícias, Política, Economia e Atualidades',
+ARTS_CULTURE = 'Artes, Música, Cinema, Livros e Séries',
+SPORTS_COMMENTARY = 'Esportes, Notícias Esportivas e Comentários',
+
 }
 
 export enum VideoFormat {
-  VERTICAL = '9:16',
-  SQUARE = '1:1',
-  HORIZONTAL = '16:9'
+
+  RATIO_9_16 = 'Vertical (9:16) - Reels, TikTok, Shorts e Stories',
+  RATIO_16_9 = 'Horizontal (16:9) - YouTube Padrão, Vídeo de Vendas e TV',
+  RATIO_1_1 = 'Quadrado (1:1) - Feed Instagram, Facebook e LinkedIn',
+  RATIO_4_5 = 'Retrato (4:5) - Feed Instagram (Ocupa mais tela que o quadrado)'
+
 }
 
 export enum VideoStyle {
-  FORMAL = 'Formal',
-  CASUAL = 'Casual',
-  FUNNY = 'Divertido',
-  DYNAMIC = 'Dinâmico',
-  INFORMATIVE = 'Informativo',
-  CREATIVE = 'Criativo',
-  FRIENDLY = 'Amigável',
-  DIPLOMATIC = 'Diplomático',
-  CONFIDENT = 'Confiante',
-  ACADEMIC = 'Acadêmico',
-  CHILDREN = 'Infantil',
-  INSPIRATIONAL = 'Inspirador',
-  MOTIVATIONAL = 'Motivacional',
-  EMOTIONAL = 'Emocional',
-  EMPATHETIC = 'Empático',
-  SERIOUS = 'Sério',
-  CONTROVERSIAL = 'Provocativo',
-  PERSUASIVE = 'Persuasivo',
-  ASSERTIVE = 'Assertivo',
-  EDUCATIONAL = 'Educacional',
-  DIDACTIC = 'Didático',
-  STRATEGIC = 'Estratégico',
-  PROFESSIONAL = 'Profissional',
-  STORYTELLING = 'Narrativo / Storytelling',
-  DOCUMENTARY = 'Documental',
-  CONVERSATIONAL = 'Conversacional',
-  INTERVIEW = 'Entrevista',
-  MONOLOGUE = 'Monólogo',
-  FAST_PACED = 'Rápido e direto',
-  SLOW_PACED = 'Calmo e reflexivo',
-  MINIMALIST = 'Minimalista',
-  RAW = 'Espontâneo / Sem edição pesada',
-  OPINIONATED = 'Opinativo',
-  NEUTRAL = 'Neutro',
-  ANALYTICAL = 'Analítico',
-  TECHNICAL = 'Técnico',
-  INSTITUTIONAL = 'Institucional',
-  YOUTH = 'Jovem',
-  CORPORATE = 'Corporativo',
-  EDUCATOR = 'Professoral',
-  MENTOR = 'Mentoria'
+// AUTORIDADE E PROFISSIONALISMO
+PROFESSIONAL_FORMAL = 'Formal e Corporativo (Sério e Polido)',
+TECHNICAL_ANALYTICAL = 'Técnico e Analítico (Baseado em dados)',
+DIPLOMATIC_NEUTRAL = 'Diplomático e Neutro (Jornalístico)',
+ASSERTIVE_PERSUASIVE = 'Assertivo e Persuasivo (Focado em convencer)',
+
+// CONEXÃO E RELACIONAMENTO
+CASUAL_CONVERSATIONAL = 'Casual e Conversacional (Papo de amigo)',
+EMPATHETIC_WELCOMING = 'Empático e Acolhedor (Suave e compreensivo)',
+AUTHENTIC_RAW = 'Espontâneo e Autêntico (Sem filtros)',
+YOUTH_MODERN = 'Jovem, Gírias e Moderno (Gen Z/Alpha)',
+
+// EDUCAÇÃO E ENSINO
+DIDACTIC_TEACHER = 'Didático e Professoral (Explicação simples)',
+MENTOR_GUIDE = 'Tom de Mentor (Sábio e Orientador)',
+ACADEMIC_RESEARCHER = 'Acadêmico e Erudito (Vocabulário complexo)',
+
+// EMOÇÃO E ENTRETENIMENTO
+HUMOROUS_WITTY = 'Bem-humorado, Divertido e Sarcástico',
+INSPIRATIONAL_MOTIVATIONAL = 'Inspirador e Motivacional (High Energy)',
+CONTROVERSIAL_BOLD = 'Polêmico, Provocativo e Opinião Forte',
+NARRATIVE_STORYTELLER = 'Narrativo e Envolvente (Estilo Contador de Histórias)',
+PLAYFUL_CHILDREN = 'Lúdico e Infantil (Para crianças)',
+
+// RITMO (Instrução de cadência para a IA)
+FAST_DYNAMIC = 'Dinâmico e Rápido (Cortes rápidos/TikTok)',
+SLOW_REFLECTIVE = 'Calmo, Lento e Reflexivo (ASMR/Relax)',
+
 }
 
 export enum AwarenessLevel {
-  UNAWARE = 'Inconsciente',
-  PROBLEM_AWARE = 'Consciente do problema',
-  SOLUTION_AWARE = 'Consciente da solução',
-  PRODUCT_AWARE = 'Consciente do produto',
-  TOTALLY_AWARE = 'Totalmente consciente e comprando'
+UNAWARE = 'Nível 1: Inconsciente (Alheio ao problema)',
+PROBLEM_AWARE = 'Nível 2: Consciente do Problema (Sente a dor)',
+SOLUTION_AWARE = 'Nível 3: Consciente da Solução (Busca opções)',
+PRODUCT_AWARE = 'Nível 4: Consciente do Produto (Consideração)',
+MOST_AWARE = 'Nível 5: Totalmente Consciente (Decisão)',
 }
 
 export enum SocialPlatform {
@@ -146,16 +150,35 @@ export enum TargetLanguage {
 }
 
 export enum AudienceSegment {
-  BEGINNERS = 'Público amplo',
-  INTERMEDIATE = 'Intermediários',
-  ADVANCED = 'Avançados',
-  PROFESSIONALS = 'Profissionais',
-  ENTREPRENEURS = 'Empreendedores',
-  STUDENTS = 'Estudantes',
-  CREATORS = 'Criadores de conteúdo',
-  EXECUTIVES = 'Executivos',
-  FREELANCERS = 'Freelancers',
-  SMALL_BIZ = 'Pequenos empresários'
+// TRIBOS DIGITAIS E HOBBIES
+AUDIENCE_GAMERS_GEEKS = 'Gamers, Geeks e Cultura Pop',
+AUDIENCE_TECH_EARLY_ADOPTERS = 'Tech Enthusiasts e Early Adopters (Amantes de Tecnologia)',
+AUDIENCE_DIY_MAKERS = 'Makers, DIY e Artesãos (Faça Você Mesmo)',
+AUDIENCE_FITNESS_BIOHACKERS = 'Rat de Academia e Biohackers (Alta Performance Física)',
+AUDIENCE_FOODIES = 'Foodies e Amantes da Gastronomia',
+
+// ESTILO DE VIDA E COMPORTAMENTO
+AUDIENCE_MINIMALISTS = 'Minimalistas e Essencialistas',
+AUDIENCE_DIGITAL_NOMADS = 'Nômades Digitais e Viajantes',
+AUDIENCE_SPIRITUAL_SEEKERS = 'Buscadores de Espiritualidade e Autoconhecimento',
+AUDIENCE_ACTIVISTS = 'Ativistas Sociais e Sustentabilidade',
+
+// PERFIL DE CONSUMO
+AUDIENCE_LUXURY = 'Consumidores de Luxo e Alto Padrão (Premium)',
+AUDIENCE_BARGAIN_HUNTERS = 'Caçadores de Ofertas e Custo-Benefício',
+
+// ETAPAS DE VIDA E GERAÇÕES
+AUDIENCE_GEN_Z = 'Geração Z (Nativos Digitais)',
+AUDIENCE_SENIORS = 'Seniors e Terceira Idade (Digitais ou não)',
+AUDIENCE_PARENTS = 'Pais e Mães (Maternidade/Paternidade)',
+AUDIENCE_STUDENTS = 'Estudantes e Universitários',
+
+// PROFISSIONAL
+AUDIENCE_ENTREPRENEURS = 'Empreendedores e Donos de Negócio',
+AUDIENCE_CORPORATE = 'Carreira Corporativa e Executivos',
+AUDIENCE_CREATORS = 'Criadores de Conteúdo e Influencers',
+AUDIENCE_INVESTORS = 'Investidores e Mercado Financeiro',
+
 }
 
 export interface ScriptBlock {
@@ -184,187 +207,146 @@ export interface GeneratorParams {
 // --- COPYWRITER TYPES ---
 
 export enum CopyNiche {
-  EDUCATION_DIDACTIC = 'Educação e explicações didáticas',
-  CURRENT_AFFAIRS = 'Opinião e comentários sobre atualidades',
-  PODCASTS_DEBATE = 'Podcasts em vídeo / mesas de debate',
-  PERSONAL_DEVELOPMENT = 'Desenvolvimento pessoal',
-  PSYCHOLOGY_BEHAVIOR = 'Psicologia e comportamento humano',
-  PERSONAL_FINANCE = 'Finanças pessoais e investimentos',
-  ENTREPRENEURSHIP = 'Empreendedorismo e negócios digitais',
-  DIGITAL_MARKETING = 'Marketing digital',
-  STORYTELLING = 'Storytelling e narrativas pessoais',
-  LIFESTYLE_VLOGS = 'Vlogs de rotina e lifestyle',
-  PROFESSIONAL_EDUCATION = 'Conteúdo educativo para profissionais',
-  HUMOR_STANDUP = 'Humor autoral e stand-up',
-  ANALYSIS_REVIEWS = 'Análises e críticas aprofundadas',
-  TECHNOLOGY_OPINION = 'Tecnologia com opinião e testes',
-  TEACHERS_CLASSES = 'Aulas autorais e professores',
-  CAREER_MARKET = 'Carreira e mercado de trabalho',
-  RELATIONSHIPS_SOCIAL = 'Relacionamentos e vida social',
-  SPIRITUALITY_PHILOSOPHY = 'Espiritualidade e filosofia de vida',
-  PRODUCTIVITY_TIME = 'Produtividade e gestão do tempo',
-  MENTAL_HEALTH = 'Saúde mental e bem-estar emocional',
-  FINANCIAL_EDUCATION = 'Educação financeira para iniciantes',
-  COMMUNICATION_SPEAKING = 'Comunicação e oratória',
-  PRACTICAL_SKILLS = 'Ensino de habilidades práticas',
-  LEGAL_CONTENT = 'Conteúdo jurídico e análises de casos',
-  MENTORSHIP_COACHING = 'Mentoria e aconselhamento profissional',
-  SALES_NEGOTIATION = 'Vendas e negociação',
-  CREATOR_ECONOMY = 'Economia dos criadores de conteúdo'
+MARKETING_DIGITAL = 'Marketing Digital e Branding',
+ENTREPRENEURSHIP = 'Empreendedorismo e Gestão de Negcios',
+FINANCE_INVESTMENTS = 'Finanças Pessoais e Investimentos',
+CAREER_CORPORATE = 'Carreira, Liderança e Mundo Corporativo',
+SALES_NEGOTIATION = 'Vendas, Persuasão e Negociação',
+LEGAL_LAW = 'Direito, Legislação e Casos Jurídicos',
+REAL_ESTATE = 'Mercado Imobiliário e Corretagem',
+AGRO_BUSINESS = 'Agronegócio, Vida no Campo e Pecuária',
+PERSONAL_DEVELOPMENT = 'Desenvolvimento Pessoal e Produtividade',
+PSYCHOLOGY_MENTAL_HEALTH = 'Psicologia, Comportamento e Saúde Mental',
+RELATIONSHIPS = 'Relacionamentos, Namoro e Vida Social',
+SPIRITUALITY = 'Espiritualidade, Religião e Filosofia',
+COMMUNICATION = 'Comunicação, Oratória e Carisma',
+HEALTH_FITNESS = 'Saúde, Nutrição, Treino e Bem-estar',
+LIFESTYLE_TRAVEL = 'Lifestyle, Viagens, Turismo e Rotina',
+BEAUTY_FASHION = 'Beleza, Moda, Estilo e Maquiagem',
+GASTRONOMY = 'Gastronomia, Culinária e Receitas',
+PARENTING_FAMILY = 'Maternidade, Paternidade e Família',
+PETS_ANIMALS = 'Pets, Veterinária e Mundo Animal',
+HOME_DECOR_DIY = 'Casa, Decoração, Reformas e DIY',
+TECHNOLOGY_GAMES = 'Tecnologia, Gadgets, Inovação e Games',
+AUTOMOTIVE = 'Automotivo, Carros e Mecânica',
+SCIENCE_CURIOSITIES = 'Ciência, Curiosidades e Fatos Interessantes',
+PROGRAMMING_DEV = 'Programação, Desenvolvimento e TI',
+KIDS_CONTENT = 'Conteúdo Infantil, Lúdico e Educativo',
+EDUCATION_LANGUAGES = 'Educação Acadêmica, Escolar e Idiomas',
+NEWS_POLITICS = 'Notícias, Política, Economia e Atualidades',
+ARTS_CULTURE = 'Artes, Música, Cinema, Livros e Séries',
+SPORTS_COMMENTARY = 'Esportes, Notícias Esportivas e Comentários',
 }
 
 export enum CopyObjective {
-  EDUCATE_CONCEPT = 'Educar: explicar conceitos',
-  EDUCATE_STEP_BY_STEP = 'Educar: passo a passo',
-  EDUCATE_TUTORIAL = 'Educar: tutorial prático',
-  EDUCATE_AWARENESS = 'Educar: gerar consciência',
-  EDUCATE_PROBLEM_SOLUTION = 'Educar: resolver problemas',
-  SELL_DIRECT = 'Vender: oferta direta',
-  SELL_INDIRECT = 'Vender: oferta indireta',
-  SELL_PRE_SALE = 'Vender: pré-venda',
-  SELL_UPSELL = 'Vender: upsell / cross-sell',
-  SELL_LEAD_CAPTURE = 'Vender: captura de leads',
-  ENGAGE_INTERACTION = 'Engajar: gerar comentários',
-  ENGAGE_RETENTION = 'Engajar: aumentar retenção',
-  ENGAGE_COMMUNITY = 'Engajar: criar comunidade',
-  ENGAGE_BELONGING = 'Engajar: senso de pertencimento',
-  ENGAGE_VIRAL = 'Engajar: alcance e viralização',
-  AUTHORITY_POSITIONING = 'Autoridade: posicionamento',
-  AUTHORITY_PROOF = 'Autoridade: prova social',
-  AUTHORITY_CASES = 'Autoridade: estudos de caso',
-  AUTHORITY_TRUST = 'Autoridade: gerar confiança',
-  AUTHORITY_BRAND = 'Autoridade: reforço de marca',
-  ACQUISITION_DISCOVERY = 'Aquisição: atrair novos seguidores',
-  ACQUISITION_TRAFFIC = 'Aquisição: gerar tráfego',
-  ACQUISITION_SUBSCRIBE = 'Aquisição: inscrições no canal',
-  RELATIONSHIP_HUMANIZE = 'Relacionamento: humanizar marca',
-  RELATIONSHIP_DIALOGUE = 'Relacionamento: abrir diálogo',
-  RELATIONSHIP_OBJECTION = 'Relacionamento: quebrar objeções',
-  PERFORMANCE_TEST = 'Performance: testar formatos',
-  PERFORMANCE_FEEDBACK = 'Performance: coletar feedback',
-  PERFORMANCE_VALIDATION = 'Performance: validar ideias',
-  STRATEGY_PORTFOLIO = 'Estratégia: construir portfólio',
-  STRATEGY_DOCUMENT = 'Estratégia: documentar jornada',
-  STRATEGY_ASSET = 'Estratégia: criar ativo de longo prazo'
-}
-
-export enum HumanizationLevel {
-  VERY_NATURAL = 'Muito natural (conversacional)',
-  BALANCED = 'Natural equilibrado',
-  FORMAL = 'Formal humanizado',
-  DIRECT = 'Objetivo e direto'
+EDUCATE_TUTORIAL = 'Educar: Tutorial prático ou Passo a passo',
+EDUCATE_CONCEPT = 'Educar: Explicar conceitos técnicos (O que é?)',
+EDUCATE_PROBLEM_SOLUTION = 'Educar: Consciência de problema e solução',
+NEWS_TRENDS = 'Educar: Análise de Notícia ou Tendência (Newsjacking)',
+SELL_DIRECT = 'Vender: Oferta Direta (Hard Sell)',
+SELL_INDIRECT = 'Vender: Oferta Indireta / Soft Sell',
+SELL_LAUNCH = 'Vender: Aquecimento e Pré-venda (Lançamento)',
+SELL_LEAD_CAPTURE = 'Vender: Captura de Leads (Isca Digital)',
+RELATIONSHIP_OBJECTION = 'Vender: Quebra de Objeções',
+PRODUCT_SHOWCASE = 'Vender: Demonstração de Produto / Unboxing',
+ENGAGE_VIRAL = 'Engajar: Viralização e Topo de Funil',
+ENGAGE_INTERACTION = 'Engajar: Gerar comentários e polêmica',
+ENGAGE_COMMUNITY = 'Engajar: Senso de comunidade e tribo',
+INSPIRE_MOTIVATION = 'Engajar: Inspirar, Motivar e Reflexão',
+EVENT_INVITE = 'Convite: Live, Webinar ou Evento',
+AUTHORITY_STORY = 'Autoridade: História de origem e Jornada',
+AUTHORITY_PROOF = 'Autoridade: Estudos de caso e Prova social',
+BRAND_MANIFESTO = 'Branding: Manifesto da Marca (Nossos Valores)',
+RELATIONSHIP_HUMANIZE = 'Conexão: Humanizar a marca / Bastidores',
+ACQUISITION_TRAFFIC = 'Tráfego: Levar pessoas para outro canal',
+STRATEGY_DOCUMENT = 'Estratégia: Documentar a jornada (Vlog/Diário)',
+STRATEGY_ASSET = 'Estratégia: Criar ativo de longo prazo (Evergreen/SEO)',
 }
 
 export enum CopyTone {
-  EDUCATIVE = 'Educativo',
-  CONSULTATIVE = 'Consultivo',
-  AUTHORITY = 'Autoridade',
-  INSPIRATIONAL = 'Inspirador',
-  PROVOCATIVE = 'Provocativo',
-  EMPATHETIC = 'Empático',
-  COMMERCIAL_SUBTLE = 'Comercial sutil',
-  COMMERCIAL_DIRECT = 'Comercial direto',
-  FORMAL = 'Formal',
-  CASUAL = 'Casual',
-  FUNNY = 'Divertido',
-  DYNAMIC = 'Dinâmico',
-  INFORMATIVE = 'Informativo',
-  CREATIVE = 'Criativo',
-  FRIENDLY = 'Amigável',
-  DIPLOMATIC = 'Diplomático',
-  CONFIDENT = 'Confiante',
-  ACADEMIC = 'Acadêmico',
-  CHILDREN = 'Infantil',
-  // Fix: Removed duplicate INSPIRATIONAL identifier.
-  MOTIVATIONAL = 'Motivacional',
-  EMOTIONAL = 'Emocional',
-  // Fix: Removed duplicate EMPATHETIC identifier.
-  SERIOUS = 'Sério',
-  CONTROVERSIAL = 'Provocativo',
-  PERSUASIVE = 'Persuasivo',
-  ASSERTIVE = 'Assertivo',
-  EDUCATIONAL = 'Educacional',
-  DIDACTIC = 'Didático',
-  STRATEGIC = 'Estratégico',
-  PROFESSIONAL = 'Profissional',
-  STORYTELLING = 'Narrativo / Storytelling',
-  DOCUMENTARY = 'Documental',
-  CONVERSATIONAL = 'Conversacional',
-  INTERVIEW = 'Entrevista',
-  MONOLOGUE = 'Monólogo',
-  FAST_PACED = 'Rápido e direto',
-  SLOW_PACED = 'Calmo e reflexivo',
-  MINIMALIST = 'Minimalista',
-  RAW = 'Espontâneo / Sem edição pesada',
-  OPINIONATED = 'Opinativo',
-  NEUTRAL = 'Neutro',
-  ANALYTICAL = 'Analítico',
-  TECHNICAL = 'Técnico',
-  INSTITUTIONAL = 'Institucional',
-  YOUTH = 'Jovem',
-  CORPORATE = 'Corporativo',
-  EDUCATOR = 'Professoral',
-  MENTOR = 'Mentoria'
+PROFESSIONAL_FORMAL = 'Formal e Corporativo (Sério e Polido)',
+TECHNICAL_ANALYTICAL = 'Técnico e Analítico (Baseado em dados)',
+DIPLOMATIC_NEUTRAL = 'Diplomático e Neutro (Jornalístico)',
+ASSERTIVE_PERSUASIVE = 'Assertivo e Persuasivo (Focado em convencer)',
+CASUAL_CONVERSATIONAL = 'Casual e Conversacional (Papo de amigo)',
+EMPATHETIC_WELCOMING = 'Empático e Acolhedor (Suave e compreensivo)',
+AUTHENTIC_RAW = 'Espontâneo e Autêntico (Sem filtros)',
+YOUTH_MODERN = 'Jovem, Gírias e Moderno (Gen Z/Alpha)',
+DIDACTIC_TEACHER = 'Didático e Professoral (Explicação simples)',
+MENTOR_GUIDE = 'Tom de Mentor (Sábio e Orientador)',
+ACADEMIC_RESEARCHER = 'Acadêmico e Erudito (Vocabulário complexo)',
+HUMOROUS_WITTY = 'Bem-humorado, Divertido e Sarcástico',
+INSPIRATIONAL_MOTIVATIONAL = 'Inspirador e Motivacional (High Energy)',
+CONTROVERSIAL_BOLD = 'Polêmico, Provocativo e Opinião Forte',
+NARRATIVE_STORYTELLER = 'Narrativo e Envolvente (Estilo Contador de Histórias)',
+PLAYFUL_CHILDREN = 'Lúdico e Infantil (Para crianças)',
+FAST_DYNAMIC = 'Dinâmico e Rápido (Cortes rápidos/TikTok)',
+SLOW_REFLECTIVE = 'Calmo, Lento e Reflexivo (ASMR/Relax)',
 }
 
 export enum PersonalityDegree {
-  IMPERSOAL = 'Impessoal',
-  SEMI_PERSONAL = 'Semi-pessoal',
-  PERSONAL = 'Pessoal',
-  VERY_PERSONAL = 'Muito pessoal'
+  FIRST_PERSON = '1ª Pessoa (Eu/Nós) - Opinião e Vivência',
+  SECOND_PERSON = '2ª Pessoa (Você) - Instrucional e Conversa Direta',
+  THIRD_PERSON = '3ª Pessoa (Ele/Eles/Fatos) - Jornalístico e Neutro'
 }
 
 export enum LanguageComplexity {
-  SIMPLE = 'Simples',
-  ACCESSIBLE = 'Acessível',
-  TECHNICAL_MODERATE = 'Técnico moderado',
-  TECHNICAL_ADVANCED = 'Técnico avançado'
+  ELI5 = 'ELI5: Explique como se eu tivesse 5 anos (Linguagem Universal)',
+  CONVERSATIONAL = 'Conversacional: Nível de blog/jornal (Médio)',
+  PROFESSIONAL = 'Corporativo/Técnico: Uso de jargões permitidos',
+  ACADEMIC = 'Acadêmico/Denso: Estrutura complexa e vocabulário rico'
 }
 
 export enum CopyStructure {
-  CONTINUOUS = 'Texto corrido',
-  SCANNABLE = 'Escaneável',
-  DIRECT_CONVERSATION = 'Conversa direta',
-  STORYTELLING = 'Storytelling',
-  OPINION_ARTICLE = 'Artigo de opinião'
+
+  // Leitura Profunda e Imersiva
+  CONTINUOUS = 'Texto Corrido / Ensaio: Parágrafos completos e narrativa fluida (Ideal para Medium/Blog)',
+  
+  // Leitura Rápida e Dinâmica
+  SCANNABLE = 'Escaneável: Frases curtas, espaçamento duplo e uso de tópicos (Ideal para LinkedIn/Redes)',
+  
+  // Conexão Pessoal
+  DIRECT_CONVERSATION = 'Conversa Direta: Estilo "Carta Aberta" ou E-mail (Foco no "Eu" e "Tu/Você")',
+  
+  // Narrativa
+  STORYTELLING = 'Storytelling: Narrativa cronológica com conflito e resolução',
+  
+  // Autoridade Lógica
+  OPINION_ARTICLE = 'Artigo de Opinião: Estrutura lógica de Tese > Argumentos > Conclusão'
+
 }
 
 export enum CopyFramework {
-  AIDA = 'AIDA (Atenção, Interesse, Desejo, Ação)',
-  PAS = 'PAS (Problema, Agitação, Solução)',
-  BAB = 'BAB (Antes, Depois, Ponte)',
-  FAB = 'FAB (Características, Vantagens, Benefícios)',
-  FOUR_PS = "4P's (Picture, Promise, Proof, Push)"
+  AIDA_TEXT = 'AIDA: Atenção > Interesse > Desejo > Ação (Vendas)',
+  PAS_TEXT = 'PAS: Problema > Agitação > Solução (Dor)',
+  HERO_JOURNEY_MICRO = 'Jornada do Herói Simplificada (Storytelling)',
+  BEFORE_AFTER_BRIDGE = 'BAB: Antes > Depois > A Ponte (Transformação)',
+  LISTICLE = 'Lista Numerada ou Bullets (Alta escaneabilidade)',
+  TLDR_SUMMARY = 'TL;DR: Resumo no topo + Explicação detalhada (Estilo Reddit/Tech)',
+  CONTRARIAN_TAKE = 'Opinião Impopular: Crença comum > Por que está errada > Minha visão',
+  HACK_REVEAL = 'O Segredo: Promessa > O "Pulo do Gato" > Como aplicar',
+  THESIS_ANTITHESIS = 'Dialética: Tese > Antítese > Síntese (Argumentativo)',
+  STEP_BY_STEP_GUIDE = 'Guia Passo a Passo Lógico'
 }
 
 export enum DominantEmotion {
-  TRUST = 'Confiança',
-  CURIOSITY = 'Curiosidade',
-  URGENCY = 'Urgência',
-  EMPATHY = 'Empatia',
-  AUTHORITY = 'Autoridade',
-  ENTHUSIASM = 'Entusiasmo',
-  SOBRIETY = 'Sobriedade'
-}
-
-export enum OriginalityDegree {
-  SAFE = 'Seguro',
-  MODERATELY_CREATIVE = 'Moderadamente criativo',
-  CREATIVE = 'Criativo',
-  BOLD = 'Ousado'
-}
-
-export enum PersuasionDegree {
-  INFORMATIVE = 'Informativo',
-  LIGHTLY_PERSUASIVE = 'Levemente persuasivo',
-  PERSUASIVE = 'Persuasivo',
-  HIGHLY_PERSUASIVE = 'Altamente persuasivo'
+  LOGIC_RATIONAL = 'Racional: Focado em lógica, dados e fatos (Sem emoção)',
+  URGENCY_FOMO = 'Urgência/FOMO: Medo de perder, oportunidade (Venda)',
+  EMPATHY_SUPPORT = 'Empatia: Acolhimento, validação e vulnerabilidade',
+  ANGER_INDIGNATION = 'Indignação: "Isso precisa mudar" (Gera debate)',
+  NOSTALGIA = 'Nostalgia: "Bons tempos", memórias e conexão',
+  INSPIRATION = 'Inspiração: Otimismo e Motivação'
 }
 
 export enum CopyLanguage {
-  PORTUGUESE = 'Português',
-  ENGLISH = 'Inglês',
-  SPANISH = 'Espanhol'
+  PT_BR = 'pt-br',
+  PT_PT = 'pt-pt',
+  EN_US = 'en-us',
+  EN_UK = 'en-uk',
+  ES_LATAM = 'es-latam',
+  FR = 'fr',
+  DE = 'de',
+  IT = 'it'
 }
 
 export enum CopyLength {
@@ -382,15 +364,12 @@ export interface CopywriterParams {
   awareness: AwarenessLevel;
   objective: CopyObjective;
   platformFormat: string;
-  humanization: HumanizationLevel;
   tone: CopyTone;
   personality: PersonalityDegree;
   complexity: LanguageComplexity;
   structure: CopyStructure;
   framework: CopyFramework;
   emotion: DominantEmotion;
-  originality: OriginalityDegree;
-  persuasion: PersuasionDegree;
   language: CopyLanguage;
   length: CopyLength;
 }
