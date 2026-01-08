@@ -197,12 +197,15 @@ export const analyzeKeywords = async (params: KeywordSearchParams): Promise<Keyw
     4. COMPARAÇÕES: Termos de decisão direta. Ex: "X vs Y", "diferença entre".
 
     DADOS NECESSÁRIOS:
-    - Métricas: Volume mensal, CPC (BRL), Dificuldade (0-100).
-    - YouTube Wins: EXATAMENTE 6 Melhores termos para vídeos de alta performance e títulos virais.
+    - Métricas: Como você não tem acesso a ferramentas pagas em tempo real, use ESTIMATIVAS baseadas na popularidade do nicho, e retorne dados como: Volume mensal, CPC (BRL), Dificuldade (0-100).
+    - YouTube Wins: EXATAMENTE 9 Melhores termos para vídeos de alta performance e títulos virais. Foque em títulos "Clicáveis" (Clickbait Ético). Liste termos que têm "Gap de Conteúdo": Muita gente procura, mas os vídeos atuais são ruins ou antigos.
     - PAA: Perguntas que o público faz.
 
     RETORNO: JSON organizado por estas categorias de funil.
   `;
+
+
+
 
   const keywordItemSchema = {
     type: Type.OBJECT,
@@ -236,8 +239,8 @@ export const analyzeKeywords = async (params: KeywordSearchParams): Promise<Keyw
           },
           youtubeWins: {
             type: Type.ARRAY,
-            minItems: 6,
-            maxItems: 6,
+            minItems: 9,
+            maxItems: 9,
             items: {
               type: Type.OBJECT,
               properties: {
